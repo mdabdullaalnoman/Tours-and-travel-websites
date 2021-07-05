@@ -1,3 +1,231 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;900&display=swap");
-/* font-family: 'Noto Serif', serif;
-font-family: 'Roboto', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+:root {
+  --orange: #ffa500;
+}
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+*::selection {
+  background: var(--orange);
+  color: #fff;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 9%;
+}
+
+header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+header .logo span {
+  color: var(--orange);
+}
+
+header #navbar a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 0.8rem;
+}
+header #navbar a:hover {
+  color: var(--orange);
+}
+
+header .icons i {
+  font-size: 2.5rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+header .icons i:hover {
+  color: var(--orange);
+}
+
+header .search-bar-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  background: #333;
+  border-top: 0.1rem solid #ccc;
+  display: flex;
+  align-items: center;
+  z-index: 10001;
+  /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
+}
+header .search-bar-container .active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+/* .actives {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+} */
+header .search-bar-container #search-bar {
+  width: 100%;
+  padding: 1rem;
+  text-transform: none;
+  color: #333;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+header .search-bar-container label {
+  color: #fff;
+  cursor: pointer;
+  font-size: 3rem;
+  margin-left: 1.5rem;
+}
+header .search-bar-container label:hover {
+  color: var(--orange);
+}
+
+/* Login form container */
+.login-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000s;
+  width: 100%;
+  background: rgba(104, 93, 93, 0.603);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form-container .active {
+  top: 0;
+}
+.login-form-container form {
+  margin: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  width: 50rem;
+}
+.login-form-container h3 {
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #444;
+  padding: 1rem 0;
+}
+
+.login-form-container form .box {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  margin: 0.6rem 0;
+}
+.login-form-container form .box:focus {
+  border-color: var(--orange);
+  outline: gray;
+  outline-style: solid;
+  outline-color: rgb(187, 255, 0);
+  outline-width: 4px;
+}
+.login-form-container form .btn {
+  border: 2px solid lightcoral;
+  color: #444;
+  padding: 0.5rem 0;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+.login-form-container form .btn:hover {
+  background: #ffa500;
+}
+.login-form-container form label {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.login-form-container form p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.login-form-container form a:hover {
+  text-decoration: underline;
+}
+
+.login-form-container #form-close {
+  position: absolute;
+  top: 15rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #fff;
+  cursor: pointer;
+}
+#menu-bar {
+  color: #fff;
+  border: 0.5rem solid #fff;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  color: #fff;
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 56%;
+  }
+}
+@media (max-width: 991px) {
+  header {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  #menu-bar {
+    display: initial;
+  }
+  header #navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: black;
+    border-top: 0.1rem solid rgba(104, 93, 93, 0.603);
+    padding: 1rem 3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  header #navbar a {
+    display: block;
+    background-color: rgba(56, 59, 66, 0.644);
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 45%;
+  }
+}
